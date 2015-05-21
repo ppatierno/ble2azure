@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <AssemblyName>IoTClient.NetMf43</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IoTClient.NetMf43</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BFFA8ED-1C52-4C0C-97A2-6825A6D528CA}</ProjectGuid>
+    <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Amqp.NetMF">
+      <HintPath>..\..\packages\AMQPNetLite.1.0.0\lib\netmf43\Amqp.NetMF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Native" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\IoT\IIoTClient.cs">
+      <Link>IoT\IIoTClient.cs</Link>
+    </Compile>
+    <Compile Include="..\IoT\IoTClient.cs">
+      <Link>IoT\IoTClient.cs</Link>
+    </Compile>
+    <Compile Include="..\IoT\IoTClientBase.cs">
+      <Link>IoT\IoTClientBase.cs</Link>
+    </Compile>
+    <Compile Include="..\IoT\IoTClientDots.cs">
+      <Link>IoT\IoTClientDots.cs</Link>
+    </Compile>
+    <Compile Include="..\IoT\IoTClientHealth.cs">
+      <Link>IoT\IoTClientHealth.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\ST\BlueNRG_HRM.cs">
+      <Link>ST\BlueNRG_HRM.cs</Link>
+    </Compile>
+    <Compile Include="..\ST\BlueNRG_HRMSettings.cs">
+      <Link>ST\BlueNRG_HRMSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\ST\SensorType.cs">
+      <Link>ST\SensorType.cs</Link>
+    </Compile>
+    <Compile Include="..\TI\SensorType.cs">
+      <Link>TI\SensorType.cs</Link>
+    </Compile>
+    <Compile Include="..\TI\SensorValueChangedEventArgs.cs">
+      <Link>TI\SensorValueChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TI\TISensorTag.cs">
+      <Link>TI\TISensorTag.cs</Link>
+    </Compile>
+    <Compile Include="..\TI\TISensorTagSettings.cs">
+      <Link>TI\TISensorTagSettings.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\NetMf43\AzureSBLite.NetMf43.csproj">
+      <Project>{0753D770-B230-4195-BA31-53B0DBCC0AD6}</Project>
+      <Name>AzureSBLite.NetMf43</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Json.NetMF\Json.NetMF43\Json.NetMF43.csproj">
+      <Project>{D056CA26-B0F1-41E3-8929-44EAEC7EBA7E}</Project>
+      <Name>Json.NetMF43</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\netmfble\TI_BLE_HCI_CLientLib_NETMF\TI_BLE_HCI_CLientLib_NETMF.csproj">
+      <Project>{7F235E38-55CA-4614-AEAD-3100351B0819}</Project>
+      <Name>TI_BLE_HCI_CLientLib_NETMF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Condition="EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <Import Condition="!EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
