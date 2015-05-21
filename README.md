@@ -4,6 +4,9 @@
 
 This concept is a demo I used for a session at MEC Internet of Things Conference 2015 in Naples.
 It shows how to build a simple IoT Gateway from BLE devices to Azure.
+
+![architecture](https://raw.githubusercontent.com/ppatierno/ble2azure/master/images/overall.png)
+
 The BLE devices supported are :
 
 * [TI Sensor Tag](http://www.ti.com/ww/en/wireless_connectivity/sensortag/) : provides temperature, humidity, accelerometer and other useful information
