@@ -3,9 +3,14 @@
 **IoT Gateway concept from BLE (Bluetooth Low Energy) devices to Azure (Event Hubs)**
 
 This concept is a demo I used for a session at MEC Internet of Things Conference 2015 in Naples.
-It shows how to build a simple IoT Gateway from BLE devices to Azure.
+It shows how to build a simple IoT Gateway from BLE devices to Azure using :
+
+**FEZ Spider** by [GHI Electronics](https://www.ghielectronics.com/)
 
 ![architecture](https://raw.githubusercontent.com/ppatierno/ble2azure/master/images/overall.png)
+
+**Netduino 3 Wi-Fi** by [Secret Labs](http://www.netduino.com/)
+
 ![architecture](https://raw.githubusercontent.com/ppatierno/ble2azure/master/images/overall_2.png)
 The BLE devices supported are :
 
