@@ -1,4 +1,4 @@
-# ble2azure
+# BLE2Azure
 
 **IoT Gateway concept from BLE (Bluetooth Low Energy) devices to Azure (Event Hubs)**
 
